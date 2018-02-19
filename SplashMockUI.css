@@ -1,0 +1,31 @@
+.container-fluid{
+	background-color: rgb(183,81,81);
+}
+
+#Logo{
+	text-align: center;
+	font-size: 5vw;
+	color: rgb(245,225,225);
+}
+
+.navbar{
+	text-align: center;
+}
+
+.gallery{
+	text-align: center;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 5px solid black;
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+
+    width:90%;
+    text-align: center;
+    
+}
+

@@ -2,10 +2,12 @@
 	<html>
 		<head>
 			<meta charset = "utf-8">
-			<title>VeNTI: About</title>
+			<title>VeNTI: Login</title>
 			<link rel="shortcut icon" href="media/logo_splash.png" />
-			<link href="about_style.css" type="text/css" rel="stylesheet">
+			<link href="profile_style.css" type="text/css" rel="stylesheet">
             <style>
+                @import url("https://use.typekit.net/nia4qni.css");
+                @import url("https://use.typekit.net/hrc2bbe.css");
             </style>
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
@@ -17,22 +19,19 @@
         <div class = "row container-fluid"> 
 			<header class="row" id = "Logo">
                 VeNTi
-                <img id = "emblem" src="media/logo_splash.png">
+                <a href="SplashMockUI.html"><img id = "emblem" src="media/logo_splash.png"></a>
 			</header>
             <!--<h1 class = "col" id = "poll">poll</h1>-->
 		</div>
-        <div class = "row container-fluid">
+        <!--<div class = "row container-fluid">
 			<a id="backbutton" class="btn" href="SplashMockUI.html">&#8592 Back</a>
-        </div>
+        </div>-->
 		<div class = "main">
-			<header id = "about">About</header>
-			<p>VeNTi is a place where people can vent about topics ...</p>
-			<header id = "creators">Creators</header>
-			<p>Ethan Johnson</p>
-			<p>Natalie Slabcynski</p>
-			<p>Terry Peters</p>
-			<p>Tom Hubbard</p>
-			</p>
+			<header id = "login"><strong>Log In</strong></header>
+			<p>Username:<textarea name="input_line" maxlength="256" class="input_line" rows=1></textarea><br />
+			Password:<textarea name="input_line" maxlength="256" class="input_line" rows=1></textarea><br />
+			<a href="">Recover password</a><br />
+			<a href="">Create new account</a></p>
 		<div class = "main">
 		</body>
 	</html>

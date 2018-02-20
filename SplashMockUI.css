@@ -15,7 +15,7 @@
 .gallery{
 	text-align: center;
     display: block;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 5%;
     margin-right: 5%;
@@ -29,3 +29,52 @@
     
 }
 
+#one{
+    border: 5px solid #ff0000;
+    border-radius: 15px
+}
+
+#oneT{
+    color: #ff0000;
+    margin-left: 5%;
+}
+
+#two{
+    border: 5px solid #00ff00;
+    border-radius: 15px
+}
+
+#twoT{
+    color: #00ff00;
+    margin-left: 5%;
+}
+
+#three{
+    border: 5px solid #0000ff;
+    border-radius: 15px
+}
+
+#threeT{
+    color: #0000ff;
+    margin-left: 5%;
+}
+
+#four{
+    border: 5px solid #00ffff;
+    border-radius: 15px
+}
+
+#fourT{
+    color: #00ffff;
+    margin-left: 5%;
+}
+
+#five{
+    border: 5px solid #ff00ff;
+    border-radius: 15px
+}
+
+#fiveT{
+    color: #ff00ff;
+    margin-left: 5%;
+}

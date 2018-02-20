@@ -1,11 +1,13 @@
 .container-fluid{
 	background-color: rgb(183,81,81);
+
 }
 
 #Logo{
 	text-align: center;
-	font-size: 5vw;
+	font-size: 60px;
 	color: rgb(245,225,225);
+    font: helvetica;
 }
 
 .navbar{
@@ -20,7 +22,7 @@
     margin-left: 5%;
     margin-right: 5%;
     border: 5px solid black;
-    border-radius: 15px;
+    border-radius: 3%;
     top: 0;
     left: 0;
 
@@ -77,4 +79,25 @@
 #fiveT{
     color: #ff00ff;
     margin-left: 5%;
+}
+
+.btn {
+    color:rgb(183,81,81);
+    background-color: rgb(245, 225, 225);
+    font-family: arial, sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+
+#login{
+    text-align: right;
+}
+
+#vote{
+    text-align: center;
+}
+
+#about{
+    text-align: left;
 }

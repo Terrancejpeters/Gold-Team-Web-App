@@ -1,17 +1,11 @@
 .container-fluid{
 	background-color: rgb(183,81,81);
-
-}
-
-.btn{
-    font-size: 1vw;
 }
 
 #Logo{
 	text-align: center;
-	font-size: 60px;
+	font-size: 5vw;
 	color: rgb(245,225,225);
-    font: helvetica;
 }
 
 .navbar{
@@ -21,12 +15,12 @@
 .gallery{
 	text-align: center;
     display: block;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 20px;
     margin-left: 5%;
     margin-right: 5%;
     border: 5px solid black;
-    border-radius: 3%;
+    border-radius: 15px;
     top: 0;
     left: 0;
 
@@ -35,77 +29,3 @@
     
 }
 
-#one{
-    border: 5px solid #ff0000;
-    border-radius: 15px
-}
-
-#oneT{
-    color: #ff0000;
-    margin-left: 5%;
-}
-
-#two{
-    border: 5px solid #00ff00;
-    border-radius: 15px
-}
-
-#twoT{
-    color: #00ff00;
-    margin-left: 5%;
-}
-
-#three{
-    border: 5px solid #0000ff;
-    border-radius: 15px
-}
-
-#threeT{
-    color: #0000ff;
-    margin-left: 5%;
-}
-
-#four{
-    border: 5px solid #00ffff;
-    border-radius: 15px
-}
-
-#fourT{
-    color: #00ffff;
-    margin-left: 5%;
-}
-
-#five{
-    border: 5px solid #ff00ff;
-    border-radius: 15px
-}
-
-#fiveT{
-    color: #ff00ff;
-    margin-left: 5%;
-}
-
-.btn {
-    color:rgb(183,81,81);
-    background-color: rgb(245, 225, 225);
-    font-family: arial, sans-serif;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-
-#login{
-    text-align: right;
-}
-
-#vote{
-    text-align: right;
-}
-
-#myPosts{
-    text-align: left;
-}
-
-#about{
-    text-align: left;
-}

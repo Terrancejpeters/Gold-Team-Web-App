@@ -52,3 +52,48 @@ h1 {
 li{
     padding-bottom: 5px;
 }
+#votes{
+    font-size: 3vw;
+}
+ol{
+    font-size: 3vw;
+}
+
+
+/*
+https://developers.google.com/chart/interactive/docs/gallery/barchart
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Question', 'Number of Votes',],
+        ['Q1', 8175000],
+        ['Q2', 3792000],
+        ['Q3', 2695000],
+        ['Q4', 2099000],
+        ['Q5', 1526000]
+      ]);
+
+      var options = {
+        title: 'Poll Results',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+
+
+
+
+*/

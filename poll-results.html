@@ -9,9 +9,45 @@
                 @import url("https://use.typekit.net/hrc2bbe.css");
             </style>
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+ 	        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
  			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript"> 
+                google.charts.load('current', {packages: ['corechart', 'bar']});
+                google.charts.setOnLoadCallback(drawBasic);
+
+                function drawBasic() {
+
+                  var data = google.visualization.arrayToDataTable([
+                    ['Question', 'Number of Votes',{role: 'style'}],
+                    ['Q1', 4000000, 'color: #b75151'],
+                    ['Q2', 3792000, 'color: #b75151'],
+                    ['Q3', 2695000, 'color: #b75151'],
+                    ['Q4', 2099000, 'color: #b75151'],
+                    ['Q5', 1526000, 'color: #b75151']
+                  ]);
+
+                  var options = {
+                    title: 'Poll Results',
+                    chartArea: {width: '50%'},
+                    colors: ['#b75151','#b75151'], 
+                      hAxis: {
+                      title: 'Total Votes',
+                      minValue: 0
+                    },
+                    vAxis: {
+                      title: 'Question'
+                    }
+                    
+                      
+                  };
+
+                  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+                  chart.draw(data, options);
+                }
+            </script>        
 		</head>
         
 		
@@ -31,6 +67,7 @@
                 <ol>
                     <li>I cant believe the 2018 presidency, how do you feel about it? </li>
                 </ol>
+                <div id = "chart_div"></div>
             </div>
 		</body>
 	</html>

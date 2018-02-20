@@ -1,0 +1,18 @@
+body, h1, p {
+    background-color: rgb(183,81,81); 
+    color: rgb(245, 225, 225);
+}
+
+h1, h2 {
+    color: rgb(245, 225, 225);
+    text-align: center;
+     
+}
+h1{
+    font-family: Blenny, sans-serif;
+    font-size: 30px;
+}
+h2 {
+    font-family: santino, sans-serif;
+    font-size: 40px;
+}

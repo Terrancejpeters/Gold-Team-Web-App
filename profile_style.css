@@ -22,7 +22,7 @@
     font-family: arial, sans-serif;
 }
 
-body .main {
+body .main, body h1 {
 	text-align: center;
 }
 

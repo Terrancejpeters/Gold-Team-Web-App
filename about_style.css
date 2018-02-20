@@ -1,0 +1,32 @@
+.container-fluid{
+	background-color: rgb(183,81,81);
+}
+
+#Logo{
+	text-align: center;
+	font-size: 5vw;
+	color: rgb(245,225,225);
+}
+
+#backbutton{
+	font-size: 2vw;
+}
+
+.navbar{
+	text-align: center;
+}
+
+.btn {
+    color:rgb(183,81,81);
+    background-color: rgb(245, 225, 225);
+    font-family: arial, sans-serif;
+}
+
+body .main {
+	text-align: center;
+}
+
+body header {
+	font-size: 28px;
+	font-weight: bold;
+}

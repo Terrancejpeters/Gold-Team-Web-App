@@ -3,6 +3,10 @@
 
 }
 
+.btn{
+    font-size: 1vw;
+}
+
 #Logo{
 	text-align: center;
 	font-size: 60px;
@@ -95,7 +99,11 @@
 }
 
 #vote{
-    text-align: center;
+    text-align: right;
+}
+
+#myPosts{
+    text-align: left;
 }
 
 #about{

@@ -2,8 +2,13 @@
 	<html>
 			
 		<head>
+<<<<<<< HEAD
 			<title>VNTY: Splash</title>
 			<link href="general_style.css" type="text/css" rel="stylesheet">
+=======
+			<title>venti: Splash</title>
+			<link href="SplashMockUI.css" type="text/css" rel="stylesheet">
+>>>>>>> 64d5595d766e79fc6048f504473706703cd73247
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  	 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -12,18 +17,51 @@
 
 		</head>
 		
-		<div class = "row container-fluid"> 
+		<div class = "container-fluid"> 
+		<div class = "row">
 			<div class="col" id = "Logo">
-				VNTY
+				venti
 			</div>
 		</div>
+		<div class = "row container-fluid">
+			<div class = "col-xs-5" id="login">
+				<a  class = "btn" href = "login.html">Log In</a>
+			</div>
+			<div class = "col-xs-1" id = "vote">
+				<a id = "vote" class = "btn" href= "polling-page.html"> Vote!</a>
+			</div>
+			<div class = "col-xs-1" id = "myPosts"> 
+				<a class = "btn" href= "home.html">Me</a>
+			</div>
+			<div class = "col-xs-5" id = "about">
+				<a class = "btn" href = "about.html"> About </a>
+			</div>
+
+		</div>
+		</div>
+
 
 		<section>
-			<img src = "media/samples/1.jpg" class = gallery>
-			<img src = "media/samples/2.jpg" class = gallery>
-			<img src = "media/samples/3.png" class = gallery>
-			<img src = "media/samples/4.jpg" class = gallery>
-			<img src = "media/samples/5.jpg" class = gallery>
+			<h1 id = "oneT">
+				#ff0000
+			</h1>
+			<img src = "media/samples/1.jpg" class = gallery id = "one">
+			<h1 id = "twoT">
+				#00ff00
+			</h1>
+			<img src = "media/samples/2.jpg" class = gallery id = "two">
+			<h1 id = "threeT">
+				#0000ff
+			</h1>
+			<img src = "media/samples/3.png" class = gallery id = "three">
+			<h1 id = "fourT">
+				#00ffff
+			</h1>
+			<img src = "media/samples/4.jpg" class = gallery id = "four">
+			<h1 id = "fiveT">
+				#ff00ff
+			</h1>
+			<img src = "media/samples/5.jpg" class = gallery id = "five">
 		</section>
 
 	</html>

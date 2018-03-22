@@ -2,11 +2,11 @@ from django.db import models
 
 # Create your models here.
 
-class Genre(models.Model):
+class Hashtag(models.Model):
     """
-    Model representing a book genre (e.g. Science Fiction, Non Fiction).
+    Model representing a hashtag (e.g. #YOLO #Covfefe etc.).
     """
-    name = models.CharField(max_length=200, help_text="Enter a book genre (e.g. Science Fiction, French Poetry etc.)")
+    name = models.CharField(max_length=15, help_text="Enter a hashtag (e.g. #YOLO #Covfefe etc.)")
     
     def __str__(self):
         """
@@ -15,87 +15,60 @@ class Genre(models.Model):
         return self.name
 
 from django.urls import reverse #Used to generate URLs by reversing the URL patterns
+import uuid # Required for unique book instances
 
-class Book(models.Model):
+class Post(models.Model):
     """
-    Model representing a book (but not a specific copy of a book).
+    Model representing a post.
     """
-    title = models.CharField(max_length=200)
-    author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
-    # Foreign Key used because book can only have one author, but authors can have multiple books
-    # Author as a string rather than object because it hasn't been declared yet in the file.
-    summary = models.TextField(max_length=1000, help_text='Enter a brief description of the book')
-    isbn = models.CharField('ISBN',max_length=13, help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
-    genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
-    # ManyToManyField used because genre can contain many books. Books can cover many genres.
-    # Genre class has already been defined so we can specify the object above.
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this particular post across entire history")
+    text = models.CharField(max_length=1000)
+    user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
+    topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
+    upvote_count = models.IntegerField()
+    hashtags = None #TODO: make this into a list of hashtags similar to genre in locallibrary
+    reaction_counts = None #TODO: make this into a list of counts for each reaction
+    
+    # Foreign Key used because post can only have one user, but users can have multiple posts
+    # User as a string rather than object because it hasn't been declared yet in the file.
+
+    # This will need to be changed, but the idea might work somewhere else
+    REACTION = (
+        ('a', 'Angry'),
+        ('f', 'Funny'),
+        ('s', 'Sad'),
+        ('w', 'Wow'))
     
     def __str__(self):
         """
         String for representing the Model object.
         """
-        return self.title
+        return self.text
     
     
     def get_absolute_url(self):
         """
         Returns the url to access a detail record for this book.
         """
-        return reverse('book-detail', args=[str(self.id)])
+        return reverse('post-detail', args=[str(self.id)])
 
-    def display_genre(self):
-        """
-        Creates a string for the Genre. This is required to display genre in Admin.
-        """
-        return ', '.join([ genre.name for genre in self.genre.all()[:3] ])
-    display_genre.short_description = 'Genre'
-
-import uuid # Required for unique book instances
-
-class BookInstance(models.Model):
+class User(models.Model):
     """
-    Model representing a specific copy of a book (i.e. that can be borrowed from the library).
+    Model representing a user.
     """
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this particular book across whole library")
-    book = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True) 
-    imprint = models.CharField(max_length=200)
-    due_back = models.DateField(null=True, blank=True)
-
-    LOAN_STATUS = (
-        ('m', 'Maintenance'),
-        ('o', 'On loan'),
-        ('a', 'Available'),
-        ('r', 'Reserved'),
-    )
-
-    status = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='m', help_text='Book availability')
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+    email = models.CharField(max_length=100)
+    post_history = None #TODO: make this into a list of posts the user has made
 
     class Meta:
-        ordering = ["due_back"]
-
-    def __str__(self):
-        """
-        String for representing the Model object
-        """
-        return '{0} ({1}, Due: {2}) [{3}]'.format(self.book, self.get_status_display(), self.due_back, self.id)
-
-class Author(models.Model):
-    """
-    Model representing an author.
-    """
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    date_of_birth = models.DateField(null=True, blank=True)
-    date_of_death = models.DateField('Died', null=True, blank=True)
-
-    class Meta:
-        ordering = ["last_name","first_name"]
+        ordering = ["username"]
     
     def get_absolute_url(self):
         """
-        Returns the url to access a particular author instance.
+        Returns the url to access a particular user instance.
         """
-        return reverse('author-detail', args=[str(self.id)])
+        return reverse('user-detail', args=[str(self.id)])
     
 
     def __str__(self):
@@ -103,3 +76,11 @@ class Author(models.Model):
         String for representing the Model object.
         """
         return '{0}, {1}'.format(self.last_name,self.first_name)
+
+class Topic(models.Model):
+    """
+    Model representing a topic.
+    """
+    text = models.CharField(max_length=200)
+    creator = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
+    active_date = models.DateField()

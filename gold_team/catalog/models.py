@@ -22,7 +22,7 @@ class Post(models.Model):
     Model representing a post.
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this particular post across entire history")
-    text = models.CharField(max_length=1000)
+    text = models.CharField(max_length=256)
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
     upvote_count = models.IntegerField()
@@ -56,9 +56,9 @@ class User(models.Model):
     """
     Model representing a user.
     """
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-    email = models.CharField(max_length=100)
+    username = models.CharField(max_length=32)
+    password = models.CharField(max_length=32)
+    email = models.CharField(max_length=64)
     post_history = None #TODO: make this into a list of posts the user has made
 
     class Meta:

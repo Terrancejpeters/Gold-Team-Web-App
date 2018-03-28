@@ -31,8 +31,8 @@ class Post(models.Model):
     post_date = models.DateTimeField(null = True, blank = True)
     feed = models.ForeignKey('Feed', on_delete=models.SET_NULL, null=True)
     
-    #set auto to off for now
-    post_time = models.TimeField(auto_now = False, auto_now_add=False)
+    
+    
     upvote_count = models.PositiveIntegerField()
     hashtags = models.ManyToManyField(Hashtag, help_text='give us a #hashtag')
     

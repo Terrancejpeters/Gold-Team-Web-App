@@ -28,9 +28,9 @@ class Post(models.Model):
     text = models.TextField(max_length=256)
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
-    post_date = models.DateTimeField(null = TRUE, blank = TRUE)
+    post_date = models.DateTimeField(null = True, blank = True)
     #set auto to off for now
-    post_time = models.TimeField(auto_now = FALSE, auto_now_add=FALSE)
+    post_time = models.TimeField(auto_now = False, auto_now_add=False)
     upvote_count = models.PositiveIntegerField()
     hashtags = models.ManyToManyField(Hashtag, help_text='give us a #hashtag')
     
@@ -45,7 +45,7 @@ class Post(models.Model):
         ('s', 'Sad'),
         ('w', 'Wow'))
 
-    reaction = models.charField(max_length=1, choices = REACTION, blank = True, help_text='Why did you upvote this post?')
+    reaction = models.CharField(max_length=1, choices = REACTION, blank = True, help_text='Why did you upvote this post?')
     reaction_counts = models.PositiveIntegerField()
     angry_count = models.PositiveIntegerField()
     funny_count = models.PositiveIntegerField()
@@ -61,7 +61,7 @@ class Post(models.Model):
     
     def get_absolute_url(self):
         """
-        Returns the url to access a detail record for this book.
+        Returns the url to access a detail record for this post.
         """
         return reverse('post-detail', args=[str(self.id)])
 
@@ -97,10 +97,31 @@ class Topic(models.Model):
     text = models.CharField(max_length=200)
     creator = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     active_date = models.DateField()
+    # Do we need a model just for the topic?
     
 class Feed(models.Model):
     """
     Model representing the main feed.
     """
     daily_topic = models.CharField(max_length=200)
-    next_topic = models.Charfield(max_length=200)
+    showcased_posts = None # Make a list of posts
+    top_posts = None # Make private (?), make a list of posts
+    nominee_list = None # Make private (?), make a list of users
+    nomination_list = None # Make a list of nominations
+    vote_count = models.PositiveIntegerField() # Does this mean a list of # of upvotes/post, or the amount of upvotes on a post?
+    next_topic = models.CharField(max_length=200)
+    
+    class Meta:
+        ordering = ["showcased_posts"]
+    
+    def __str__(self):
+        """
+        String for representing the Model object.
+        """
+        return self.text
+    
+    def get_absolute_url(self):
+        """
+        Returns the url to access a particular user instance.
+        """
+        return reverse('feed-detail', args=[str(self.id)])

@@ -4,7 +4,8 @@ A Web App for Computer Science 326
 TODO:
 High Priority:
 - Configure the django site layout to loosely match the idea we had for it
-
+- Populate site with dummy information
+ - Make authorized admin for compsci326 as well as others
 
 Medium Priority:
 - Make it so that the html and css all are linked properly on the django site

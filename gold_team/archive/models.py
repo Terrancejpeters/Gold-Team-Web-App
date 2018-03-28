@@ -29,6 +29,8 @@ class Post(models.Model):
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
     post_date = models.DateTimeField(null = True, blank = True)
+    feed = models.ForeignKey('Feed', on_delete=models.SET_NULL, null=True)
+    
     #set auto to off for now
     post_time = models.TimeField(auto_now = False, auto_now_add=False)
     upvote_count = models.PositiveIntegerField()
@@ -72,7 +74,6 @@ class User(models.Model):
     username = models.CharField(max_length=32)
     password = models.CharField(max_length=32)
     email = models.CharField(max_length=64)
-    post_history = None #TODO: make this into a list of posts the user has made
 
     class Meta:
         ordering = ["username"]
@@ -104,21 +105,20 @@ class Feed(models.Model):
     Model representing the main feed.
     """
     daily_topic = models.CharField(max_length=200)
+    next_topic = models.CharField(max_length=200)
     showcased_posts = None # Make a list of posts
     top_posts = None # Make private (?), make a list of posts
     nominee_list = None # Make private (?), make a list of users
     nomination_list = None # Make a list of nominations
-    vote_count = models.PositiveIntegerField() # Does this mean a list of # of upvotes/post, or the amount of upvotes on a post?
-    next_topic = models.CharField(max_length=200)
     
     class Meta:
-        ordering = ["showcased_posts"]
+        ordering = ["daily_topic"]
     
     def __str__(self):
         """
         String for representing the Model object.
         """
-        return self.text
+        return self.daily_topic
     
     def get_absolute_url(self):
         """

@@ -84,3 +84,10 @@ class Topic(models.Model):
     text = models.CharField(max_length=200)
     creator = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     active_date = models.DateField()
+    
+class Feed(models.Model):
+    """
+    Model representing the main feed.
+    """
+    daily_topic = models.CharField(max_length=200)
+    next_topic = models.Charfield(max_length=200)

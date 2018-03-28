@@ -15,19 +15,25 @@ class Hashtag(models.Model):
         return self.name
 
 from django.urls import reverse #Used to generate URLs by reversing the URL patterns
-import uuid # Required for unique book instances
+import uuid # Required for unique post instances
 
 class Post(models.Model):
     """
     Model representing a post.
     """
+    #maybe we have a parent post ID if it is a comment response post? set to be null under certain conditions?
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this particular post across entire history")
-    text = models.CharField(max_length=256)
+    #post parent or child boolean
+    is_parent = models.BooleanField()
+    text = models.TextField(max_length=256)
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
-    upvote_count = models.IntegerField()
-    hashtags = None #TODO: make this into a list of hashtags similar to genre in locallibrary
-    reaction_counts = None #TODO: make this into a list of counts for each reaction
+    post_date = models.DateTimeField(null = TRUE, blank = TRUE)
+    #set auto to off for now
+    post_time = models.TimeField(auto_now = FALSE, auto_now_add=FALSE)
+    upvote_count = models.PositiveIntegerField()
+    hashtags = models.ManyToManyField(Hashtag, help_text='give us a #hashtag')
+    
     
     # Foreign Key used because post can only have one user, but users can have multiple posts
     # User as a string rather than object because it hasn't been declared yet in the file.
@@ -38,7 +44,14 @@ class Post(models.Model):
         ('f', 'Funny'),
         ('s', 'Sad'),
         ('w', 'Wow'))
-    
+
+    reaction = models.charField(max_length=1, choices = REACTION, blank = True, help_text='Why did you upvote this post?')
+    reaction_counts = models.PositiveIntegerField()
+    angry_count = models.PositiveIntegerField()
+    funny_count = models.PositiveIntegerField()
+    sad_count = models.PositiveIntegerField()
+    wow_count = models.PositiveIntegerField()    
+
     def __str__(self):
         """
         String for representing the Model object.

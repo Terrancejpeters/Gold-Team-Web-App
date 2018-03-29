@@ -50,6 +50,12 @@ body header {
 	text-align: center;
 }
 
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
 .btn {
     color:rgb(183,81,81);
     background-color: rgb(245, 225, 225);

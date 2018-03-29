@@ -21,8 +21,8 @@ class FeedAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('text','user','topic','post_date','post_time','upvote_count')
-    fields = [('text','user','topic'),'upvote_count',('post_date','post_time')]
+    list_display = ('text','user','topic','upvote_count')
+    fields = [('text','user','topic'),'upvote_count'] #post_date/time?
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):

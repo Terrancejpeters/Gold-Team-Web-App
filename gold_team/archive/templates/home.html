@@ -26,6 +26,9 @@
 		<a id="backbutton" class="btn" href="SplashMockUI.html">&#8592 Back</a>
 	</div>-->
 {% extends "base_generic.html" %}
+    
+    
+{{% block content %}}
 	<h1>Posts</h1>
 	<div class = "post">
 		<h2><font color=rgb(255, 10, 200)>{{id}} {{post_date}}</font></h2>
@@ -39,5 +42,5 @@
 		<h2><font color=rgb(0, 10, 200)>{{id}} {{post_date}}</font></h2>
 		<p>{{post_date}}</p>
 	</div>
-	
+{{% endblock %}}
 </body>

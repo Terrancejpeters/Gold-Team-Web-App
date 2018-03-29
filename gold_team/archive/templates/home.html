@@ -1,8 +1,9 @@
 <!--maybe take the this header and apply it to basic_general? might make sense if we have consistent information across several pages-->
 <!--TODO: Make base_generic.html-->
+{% extends "base_generic.html" %}
 <head>
 	<meta charset = "utf-8">
-	<title>venti: myPosts</title>
+<title>venti: myPosts</title>
 	<link rel="shortcut icon" href="media/logo_splash.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
@@ -25,6 +26,7 @@
 	<!--<div class = "row container-fluid">
 		<a id="backbutton" class="btn" href="SplashMockUI.html">&#8592 Back</a>
 	</div>-->
+
 {% extends "base_generic.html" %}
     
     
@@ -43,4 +45,4 @@
 		<p>{{post_date}}</p>
 	</div>
 {{% endblock %}}
-</body>
+</body>    

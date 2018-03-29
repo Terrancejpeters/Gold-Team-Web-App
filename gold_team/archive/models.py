@@ -89,7 +89,7 @@ class User(models.Model):
         """
         String for representing the Model object.
         """
-        return '{0}'.format(self.first_name)
+        return '{0}'.format(self.username)
 
 class Topic(models.Model):
     """

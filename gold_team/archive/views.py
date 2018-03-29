@@ -16,6 +16,13 @@ def home(request):
     return render(
         request,
         'home.html',
+        # context={'num_posts':num_posts},
+    )
+
+def login(request):
+    return render(
+        request,
+        'login.html',
     )
 
 from django.views import generic

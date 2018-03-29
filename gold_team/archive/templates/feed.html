@@ -38,7 +38,7 @@
 
       {% for post in post_list %}
       <li>
-        <a href="{{ book.get_id }}">{{ post.text }}</a> ({{post.topic}})
+        <a href="{{ post.get_id }}">{{ post.text }}</a> ({{post.topic}})
       </li>
       {% endfor %}
 

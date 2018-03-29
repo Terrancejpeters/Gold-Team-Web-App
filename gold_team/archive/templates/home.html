@@ -2,19 +2,21 @@
 <!--TODO: Make base_generic.html-->
 {% extends "base_generic.html" %}
 
-{{% block content %}}
-<head>
-	<meta charset = "utf-8">
-<title>venti: myPosts</title>
-	<link rel="shortcut icon" href="media/logo_splash.png" />
+
+<!--<head>-->
+	<!--
+	<title>Venti: My Posts</title>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="media/logo_splash.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+	-->
+<!--</head>-->
 
-<body>
-	
+<!--<body>-->
+{% block content %}
 	<div class = "row container-fluid"> 
 		<header class="row" id = "Logo">
 			venti
@@ -43,5 +45,5 @@
 		<h2><font color=rgb(0, 10, 200)>{{id}} {{post_date}}</font></h2>
 		<p>{{post_date}}</p>
 	</div>
-</body>
-{{% endblock %}}
+<!--</body>-->
+{% endblock %}

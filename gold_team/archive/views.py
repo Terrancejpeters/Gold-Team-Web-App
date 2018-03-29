@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from .models import Post, User, Feed, Topic
 
-def home(request):
+def feed(request):
     """
     View function for home page of site.
     """
@@ -15,7 +15,7 @@ def home(request):
     # Render the HTML template home.html with the data in the context variable
     return render(
         request,
-        'home.html',
+        'feed.html',
         # context={'num_posts':num_posts},
     )
 

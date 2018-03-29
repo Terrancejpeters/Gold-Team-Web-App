@@ -1,6 +1,8 @@
 <!--maybe take the this header and apply it to basic_general? might make sense if we have consistent information across several pages-->
 <!--TODO: Make base_generic.html-->
 {% extends "base_generic.html" %}
+
+{{% block content %}}
 <head>
 	<meta charset = "utf-8">
 <title>venti: myPosts</title>
@@ -26,11 +28,8 @@
 	<!--<div class = "row container-fluid">
 		<a id="backbutton" class="btn" href="SplashMockUI.html">&#8592 Back</a>
 	</div>-->
-
-{% extends "base_generic.html" %}
     
     
-{{% block content %}}
 	<h1>Posts</h1>
 	<div class = "post">
 		<h2><font color=rgb(255, 10, 200)>{{id}} {{post_date}}</font></h2>
@@ -44,5 +43,5 @@
 		<h2><font color=rgb(0, 10, 200)>{{id}} {{post_date}}</font></h2>
 		<p>{{post_date}}</p>
 	</div>
+</body>
 {{% endblock %}}
-</body>    

@@ -22,19 +22,19 @@ class Post(models.Model):
     Model representing a post.
     """
     #maybe we have a parent post ID if it is a comment response post? set to be null under certain conditions?
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this particular post across entire history")
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this particular post across entire history")
     #post parent or child boolean
-    is_parent = models.BooleanField()
+    # is_parent = models.BooleanField()
     text = models.TextField(max_length=256)
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
-    post_date = models.DateTimeField(null = True, blank = True)
+    # post_date = models.DateTimeField(null = True, blank = True)
     feed = models.ForeignKey('Feed', on_delete=models.SET_NULL, null=True)
     
     
     
     upvote_count = models.PositiveIntegerField()
-    hashtags = models.ManyToManyField(Hashtag, help_text='give us a #hashtag')
+    # hashtags = models.ManyToManyField(Hashtag, help_text='give us a #hashtag')
     
     
     # Foreign Key used because post can only have one user, but users can have multiple posts
@@ -47,12 +47,12 @@ class Post(models.Model):
         ('s', 'Sad'),
         ('w', 'Wow'))
 
-    reaction = models.CharField(max_length=1, choices = REACTION, blank = True, help_text='Why did you upvote this post?')
-    reaction_counts = models.PositiveIntegerField()
-    angry_count = models.PositiveIntegerField()
-    funny_count = models.PositiveIntegerField()
-    sad_count = models.PositiveIntegerField()
-    wow_count = models.PositiveIntegerField()    
+    # reaction = models.CharField(max_length=1, choices = REACTION, blank = True, help_text='Why did you upvote this post?')
+    # reaction_counts = models.PositiveIntegerField()
+    # angry_count = models.PositiveIntegerField()
+    # funny_count = models.PositiveIntegerField()
+    # sad_count = models.PositiveIntegerField()
+    # wow_count = models.PositiveIntegerField()    
 
     def __str__(self):
         """

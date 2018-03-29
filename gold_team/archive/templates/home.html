@@ -33,6 +33,19 @@
     
     
 	<h1>Posts</h1>
+	{% if post_list %}
+    <ul>
+
+      {% for post in post_list %}
+      <li>
+        <a href="{{ book.get_id }}">{{ post.text }}</a> ({{post.topic}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no posts yet.</p>
+    {% endif %} 
 	<div class = "post">
 		<h2><font color=rgb(255, 10, 200)>{{id}} {{post_date}}</font></h2>
 		<p>{{text}}</p>

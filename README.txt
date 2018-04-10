@@ -6,6 +6,7 @@ THe Django files can be found in the gold_team folder
 TODO:
 High Priority:
 - Add sessions
+- Get icon in base_generic.html to show up
 - Update other html files to work with base_generic.html
  - Make them like home.html or login.html where there is no head or body tags, just the block content
 - Get Post object text, title, and maybe time to show on home and maybe User object elements to show on

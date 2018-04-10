@@ -1,6 +1,8 @@
 # Gold-Team-Web-App
 A Web App for Computer Science 326
 
+THe Django files can be found in the gold_team folder
+
 TODO:
 High Priority:
 - Update base_generic.html, mostly done

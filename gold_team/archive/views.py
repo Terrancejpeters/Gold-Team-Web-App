@@ -25,6 +25,12 @@ def login(request):
         'login.html',
     )
 
+def profile(request):
+    return render(
+        request,
+        'profile.html'
+    )
+
 from django.views import generic
 
 class PostListView(generic.ListView):
@@ -33,3 +39,5 @@ class PostListView(generic.ListView):
 
 class PostDetailView(generic.DetailView):
     model = Post
+
+

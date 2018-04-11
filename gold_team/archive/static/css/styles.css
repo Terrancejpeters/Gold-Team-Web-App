@@ -2,6 +2,7 @@
 	text-align: center;
 	font-size: 6vw;
 	color: rgb(245,225,225);
+    font-family: 'blenny';
 }
 
 #id{
@@ -86,6 +87,7 @@ body header {
     border: 3px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
+    box-shadow: 3px 3px 5px 6px #ccc;
     resize: none;
     margin-top: 20px;
 }
@@ -106,7 +108,6 @@ body header {
     border-radius: 15px;
     top: 0;
     left: 0;
-
     width:90%;
     text-align: center;
     
@@ -115,4 +116,9 @@ body header {
 
 body .main {
 	text-align: center;
+}
+
+
+.row{
+    
 }

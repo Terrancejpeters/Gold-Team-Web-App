@@ -3,22 +3,20 @@
 <head>
   
   {% block title %}<title>Venti</title>{% endblock %}
-  
-  
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href='media/logo_splash.png'> <!--TODO: get icon to show-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- adobe fonts-->
+  <link rel="stylesheet" href="https://use.typekit.net/tcp4vdn.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   <!-- Add additional CSS in static file -->
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href='media/logo_splash.png'> <!--TODO: get icon to show-->
-  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- adobe fonts-->
-  <link rel="stylesheet" href="https://use.typekit.net/tcp4vdn.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 </head>
 
 <body>
@@ -34,10 +32,17 @@
       <div class="col-sm-2">
       {% block sidebar %}
       <ul class="sidebar-nav">
-          <li><a href="{% url 'feed' %}">Feed</a></li>
-		  <li><a href="{% url 'login' %}">Log In</a></li>
-          <li><a href="">Profile</a></li>
-		  <li><a href="">History</a></li>
+        <li><a href="{% url 'feed' %}">Feed</a></li>
+		<li><a href="% url 'about' %">About</a></li>
+		  
+		{% if user.is_authenticated %}
+		<li>User: {{ user.get_username }}</li>
+        <li><a href="{% url 'profile' %}?next={{request.path}}">Profile</a></li>
+		<li><a href="{% url 'myposts' %}">My Posts</a></li>
+		<li><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>   
+		{% else %}
+		  <li><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>   
+		{% endif %} 
       </ul>
       {% endblock %}
       </div>

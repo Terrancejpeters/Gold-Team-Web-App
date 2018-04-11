@@ -41,3 +41,16 @@ class PostDetailView(generic.DetailView):
     model = Post
 
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+class PostsByUserListView(LoginRequiredMixin,generic.ListView):
+    """
+    Generic class-based view listing posts made by current user. 
+    """
+    model = Post
+    template_name ='catalog/posts_user.html'
+    paginate_by = 10
+    
+    def get_queryset(self):
+        return Post.objects.filter(poster=self.request.poster).filter(status__exact='o')#.order_by('date_posted')
+

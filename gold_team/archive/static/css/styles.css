@@ -1,7 +1,10 @@
-#Logo{
+.Logo{
 	text-align: center;
 	font-size: 6vw;
 	color: rgb(245,225,225);
+    font-family: blenny, sans-serif;
+    font-style: normal;
+    font-weight: 900;
 }
 
 #id{
@@ -54,6 +57,7 @@ body header {
     margin-top: 20px;
     padding: 0;
     list-style: none;
+    font-size: 3rem;
 }
 
 .btn {
@@ -86,6 +90,7 @@ body header {
     border: 3px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
+    box-shadow: 3px 3px 5px 6px #ccc;
     resize: none;
     margin-top: 20px;
 }
@@ -106,7 +111,6 @@ body header {
     border-radius: 15px;
     top: 0;
     left: 0;
-
     width:90%;
     text-align: center;
     
@@ -115,4 +119,9 @@ body header {
 
 body .main {
 	text-align: center;
+}
+
+
+.row{
+    
 }

@@ -8,6 +8,8 @@
   <link rel="shortcut icon" href='media/logo_splash.png'> <!--TODO: get icon to show-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- adobe fonts-->
+  <link rel="stylesheet" href="https://use.typekit.net/tcp4vdn.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   <!-- Add additional CSS in static file -->
@@ -18,9 +20,14 @@
 </head>
 
 <body>
-
+	<div class = "row container-fluid"> 
+		<header class="row" id = "Logo">
+			venti
+			<a href="SplashMockUI.html"><img id = "emblem" src="../media/logo_splash.png"></a>
+		</header>
+	</div>
+    
   <div class="container-fluid">
-
     <div class="row">
       <div class="col-sm-2">
       {% block sidebar %}

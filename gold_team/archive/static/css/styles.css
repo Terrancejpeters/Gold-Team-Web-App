@@ -1,8 +1,10 @@
-#Logo{
+.Logo{
 	text-align: center;
 	font-size: 6vw;
 	color: rgb(245,225,225);
-    font-family: 'blenny';
+    font-family: blenny, sans-serif;
+    font-style: normal;
+    font-weight: 900;
 }
 
 #id{

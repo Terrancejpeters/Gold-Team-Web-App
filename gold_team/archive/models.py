@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -26,10 +27,11 @@ class Post(models.Model):
     #post parent or child boolean
     # is_parent = models.BooleanField()
     text = models.TextField(max_length=256)
-    user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
+    poster = models.ForeignKey('User', on_delete=models.SET_NULL, null=True, blank=True)
     topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
     # post_date = models.DateTimeField(null = True, blank = True)
     feed = models.ForeignKey('Feed', on_delete=models.SET_NULL, null=True)
+	
     
     
     
@@ -66,7 +68,7 @@ class Post(models.Model):
         Returns the url to access a detail record for this post.
         """
         return reverse('post-detail', args=[str(self.id)])
-
+		
 class User(models.Model):
     """
     Model representing a user.

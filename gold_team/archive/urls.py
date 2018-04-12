@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import include
 from . import views
 
 
@@ -11,8 +12,14 @@ urlpatterns = [
     path('feed/<int:pk>', views.PostDetailView.as_view(), name='post-detail'),
     path('login/', views.login, name='login'),
     #path('profile/login/', views.login, name='login'),
+    path('profile/', views.profile, name='profile'),
 ]
 
 urlpatterns += [   
-    path('myposts/', views.PostsByUserListView.as_view(), name='my-borrowed'),
+    path('myposts/', views.PostsByUserListView.as_view(), name='my-posts'),
+]
+
+#Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

@@ -27,12 +27,10 @@ class Post(models.Model):
     #post parent or child boolean
     # is_parent = models.BooleanField()
     text = models.TextField(max_length=256)
-    poster = models.ForeignKey('User', on_delete=models.SET_NULL, null=True, blank=True)
+    poster = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
     # post_date = models.DateTimeField(null = True, blank = True)
     feed = models.ForeignKey('Feed', on_delete=models.SET_NULL, null=True)
-	
-    
     
     
     upvote_count = models.PositiveIntegerField()
@@ -69,36 +67,12 @@ class Post(models.Model):
         """
         return reverse('post-detail', args=[str(self.id)])
 		
-class User(models.Model):
-    """
-    Model representing a user.
-    """
-    username = models.CharField(max_length=32)
-    password = models.CharField(max_length=32)
-    email = models.CharField(max_length=64)
-
-    class Meta:
-        ordering = ["username"]
-    
-    def get_absolute_url(self):
-        """
-        Returns the url to access a particular user instance.
-        """
-        return reverse('user-detail', args=[str(self.id)])
-    
-
-    def __str__(self):
-        """
-        String for representing the Model object.
-        """
-        return '{0}'.format(self.username)
-
 class Topic(models.Model):
     """
     Model representing a topic.
     """
     text = models.CharField(max_length=200)
-    creator = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
+    creator = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     active_date = models.DateField()
     # Do we need a model just for the topic?
     

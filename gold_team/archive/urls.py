@@ -14,5 +14,9 @@ urlpatterns = [
 ]
 
 urlpatterns += [   
-    path('myposts/', views.PostsByUserListView.as_view(), name='my-borrowed'),
+    path('myposts/', views.PostsByUserListView.as_view(), name='my-posts'),
+]
+
+urlpatterns +=[
+	path('profile/', views.profile, name='profile'),
 ]

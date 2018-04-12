@@ -5,15 +5,15 @@
         <!--<div class = "row container-fluid">
 <a id="backbutton" class="btn" href="SplashMockUI.html">&#8592 Back</a>
 </div>-->
-        <h1>USER - John Doe</h1>
+        <h1>USERNAME</h1>
         <div class = "main">
             <button>My Posts</button><br />
             Upvotes: 2,345<br />
             Number of posts: 82<br />
             Highlighted Posts: 11<br />
             <br />
-            <a>Change Password</a><br />
-            Notifications?   <button>ON</button>  <button>OFF</button><br />
+            {# Assumes you setup the password_reset view in your URLconf #}
+            <p><a href="{% url 'password_reset' %}">Change password?</a></p>
         </div>
     </body>
 {% endblock %}

@@ -12,6 +12,13 @@ High Priority:
 - Get Post object text, title, and maybe time to show on home and maybe User object elements to show on
 - Make password reset functional
 - Add password reset to profile page
+//css//
+-ONCE LAYOUT IT FIXED, MAKE IT FANCY 
+-edit collapsable sidebar nav
+-edit coloring
+-edit logo paths for ease of convenience
+-fix container sizes, edit tags for bootstrap compliance
+
 
 Medium Priority:
 - Configure the django site layout to more accurately match the idea we had for it

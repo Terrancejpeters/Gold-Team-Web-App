@@ -10,6 +10,8 @@ High Priority:
 - Update other html files to work with base_generic.html
  - Make them like home.html or login.html where there is no head or body tags, just the block content
 - Get Post object text, title, and maybe time to show on home and maybe User object elements to show on
+- Make password reset functional
+- Add password reset to profile page
 
 Medium Priority:
 - Configure the django site layout to more accurately match the idea we had for it

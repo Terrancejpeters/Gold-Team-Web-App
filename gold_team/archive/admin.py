@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Hashtag, Post, User, Topic, Feed
+from .models import Hashtag, Post, Topic, Feed
 
 #admin.site.register(Feed)
 #admin.site.register(Post)
@@ -23,11 +23,6 @@ class FeedAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     list_display = ('text','poster','topic','upvote_count')
     fields = [('text','poster','topic'),'upvote_count'] #post_date/time?
-
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'password', 'email')
-    inlines = [PostInline]
 
 class TopicAdmin(admin.ModelAdmin):
     list_display = ('text','creator','active_date')

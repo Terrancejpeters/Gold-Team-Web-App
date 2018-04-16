@@ -13,6 +13,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     #path('profile/login/', views.login, name='login'),
     path('profile/', views.profile, name='profile'),
+    path('about/', views.about, name='about'),
 ]
 
 urlpatterns += [   

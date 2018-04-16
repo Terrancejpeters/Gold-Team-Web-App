@@ -1,8 +1,9 @@
 from django.shortcuts import render
+from django import forms
 
 # Create your views here.
 
-from .models import Post, User, Feed, Topic
+from .models import Post, User, Feed, Topic, UserProfile
 
 def feed(request):
     """

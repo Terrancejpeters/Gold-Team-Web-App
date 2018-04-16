@@ -101,3 +101,25 @@ class Feed(models.Model):
         Returns the url to access a particular user instance.
         """
         return reverse('feed-detail', args=[str(self.id)])
+
+class UserProfile(models.Model):
+    """
+    Profile information for the user
+    """
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
+    num_posts = models.IntegerField(0)
+    num_upvotes = models.IntegerField(0)
+    num_highlighted = models.IntegerField(0)
+    
+    def __str__(self):
+        """
+        String for representing the Model object.
+        """
+        return self.user
+
+def create_profile(sender, **kwargs):
+    user=kwargs["instance"]
+    if kwargs["created"]:
+        user_profile=UserProfile(user=user)
+        user_profile.save()
+

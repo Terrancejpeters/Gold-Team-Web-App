@@ -2,16 +2,15 @@
 
 {% block content %}
         </div>
-        <!--<div class = "row container-fluid">
-<a id="backbutton" class="btn" href="SplashMockUI.html">&#8592 Back</a>
-</div>-->
 		{% if user.is_authenticated %}
         <h1>{{ user.get_username }}</h1>
         <div class = "main">
-            <button>My Posts</button><br />
-            Upvotes: 2,345<br />
-            Number of posts: 82<br />
-            Highlighted Posts: 11<br />
+            <button href="{% url 'my-posts' %}">My Posts</button><br />
+			{% if user.get_profile %}
+            Upvotes: {{ user.get_profile.num_upvotes }}<br />
+            Number of posts: {{ user.get_profile.num_posts }}<br />
+            Highlighted Posts: {{ user.get_profile.num_highlighted }}<br />
+			{% endif %}
             <br />
             {# Assumes you setup the password_reset view in your URLconf #}
             <p><a href="{% url 'password_reset' %}">Change password?</a></p>

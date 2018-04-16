@@ -9,10 +9,10 @@
         <h1>{{ user.get_username }}</h1>
         <div class = "main">
             <button>My Posts</button><br />
-			{% if view_profile() %}
-            Upvotes: {{ user_profile.num_upvotes }}<br />
-            Number of posts: {{ user_profile.num_posts }}<br />
-            Highlighted Posts: {{ user_profile.num_highlighted }}<br />
+			{% if user.get_profile %}
+            Upvotes: {{ user.get_profile.num_upvotes }}<br />
+            Number of posts: {{ user.get_profile.num_posts }}<br />
+            Highlighted Posts: {{ user.get_profile.num_highlighted }}<br />
 			{% endif %}
             <br />
             {# Assumes you setup the password_reset view in your URLconf #}

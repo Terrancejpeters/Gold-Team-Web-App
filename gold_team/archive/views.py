@@ -31,6 +31,11 @@ def profile(request):
         'profile.html'
     )
 
+#@login_required
+def view_profile(request):
+    user_profile = request.user.get_profile()
+    url = user_profile.url
+
 from django.views import generic
 
 class PostListView(generic.ListView):

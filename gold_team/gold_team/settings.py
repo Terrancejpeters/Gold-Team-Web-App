@@ -122,3 +122,6 @@ STATIC_URL = '/static/'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+
+# Authorize profile model to be called
+AUTH_PROFILE_MODULE = "archive.UserProfile"

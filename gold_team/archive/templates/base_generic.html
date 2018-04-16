@@ -32,7 +32,7 @@
       {% block sidebar %}
       <ul class="sidebar-nav">
         <li><a href="{% url 'feed' %}">Feed</a></li>
-        <li><a href="{% url 'posting' %}">Post</a></li>
+        <li><a href="{% url 'post' %}">Post</a></li>
 		  
 		{% if user.is_authenticated %}
 		<li>User: {{ user.get_username }}</li>

@@ -26,8 +26,6 @@ def login(request):
     )
 
 def profile(request):
-    user_profile = request.user.get_profile()
-    url = user_profile.url
     return render(
         request,
         'profile.html'

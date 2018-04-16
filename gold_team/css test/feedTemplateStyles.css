@@ -1,0 +1,93 @@
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+/*
+*
+*
+*
+*/
+.id{
+  text-align: left;
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.date{
+  text-align: right;
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+body{
+    background-color: rgb(183,81,81);
+}
+
+h5{
+	text-align: center;
+	font-size: 6vw;
+	color: rgb(245,225,225);
+    font-family: blenny, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    text-shadow: 0 0 10px #000;
+}
+
+.head{
+  background-color: rgb(183,81,81);
+}
+
+.display-4{
+    color:rgb(245,225,225);
+    font-family: blenny, sans-serif;
+    text-shadow: 0 0 10px #000;
+}
+
+#lead{
+   color:rgb(245,225,225); 
+}
+
+.btn{
+  display: inline-block;
+  margin-right: 1.5rem;
+  -webkit-box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 12px #000;
+}
+.card, .card-body{
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    
+}
+.card{
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    -webkit-box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 15px #000;
+}
+.card-body{
+    background-color: rgb(245,225,225);
+    box-shadow: inset 0 0 8px #000000;
+}
+
+

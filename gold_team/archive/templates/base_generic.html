@@ -16,7 +16,6 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   
-  
 </head>
 
 <body>
@@ -33,7 +32,6 @@
       {% block sidebar %}
       <ul class="sidebar-nav">
         <li><a href="{% url 'feed' %}">Feed</a></li>
-		<li><a href="% url 'about' %">About</a></li>
 		  
 		{% if user.is_authenticated %}
 		<li>User: {{ user.get_username }}</li>
@@ -69,4 +67,7 @@
     </div>
   </div>
 </body>
+<footer>
+	<a href="{% url 'about' %}">About</a>
+</footer>
 </html>

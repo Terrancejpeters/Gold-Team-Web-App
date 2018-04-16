@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from django import forms
 
 # Create your views here.
 
-from .models import Post, User, Feed, Topic, UserProfile
+from .models import Post, User, Feed, Topic
 
 def feed(request):
     """
@@ -27,15 +26,18 @@ def login(request):
     )
 
 def profile(request):
+    user_profile = request.user.get_profile()
+    url = user_profile.url
     return render(
         request,
         'profile.html'
     )
 
-#@login_required
-def view_profile(request):
-    user_profile = request.user.get_profile()
-    url = user_profile.url
+def about(request):
+    return render(
+        request,
+        'about.html'
+    )
 
 from django.views import generic
 

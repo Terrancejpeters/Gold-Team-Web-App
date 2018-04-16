@@ -117,4 +117,9 @@ class UserProfile(models.Model):
         """
         return self.user
 
-User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
+def create_profile(sender, **kwargs):
+    user=kwargs["instance"]
+    if kwargs["created"]:
+        user_profile=UserProfile(user=user)
+        user_profile.save()
+

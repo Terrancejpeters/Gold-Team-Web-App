@@ -1,31 +1,7 @@
-<!--maybe take the this header and apply it to basic_general? might make sense if we have consistent information across several pages-->
-<!--TODO: Make base_generic.html-->
 {% extends "base_generic.html" %}
 
-
-<!--<head>-->
-	<!--
-	<title>Venti: My Posts</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="shortcut icon" href="media/logo_splash.png" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	-->
-<!--</head>-->
-
-<!--<body>-->
 {% block content %}
-	<!--<div class = "row container-fluid">
-		<a class = "btn" href = "{% url 'login' %}">Log In</a>
-	</div>-->
-    
-	<!--<div class = "row container-fluid">
-		<a id="backbutton" class="btn" href="SplashMockUI.html">&#8592 Back</a>
-	</div>-->
-    
-    
+	
 	<h1>Posts</h1>
 	{% if post_list %}
     <ul>
@@ -52,5 +28,4 @@
 		<h2><font color=rgb(0, 10, 200)>{{id}} {{post_date}}</font></h2>
 		<p>{{post_date}}</p>
 	</div>
-<!--</body>-->
 {% endblock %}

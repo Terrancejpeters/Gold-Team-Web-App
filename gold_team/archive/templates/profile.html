@@ -2,13 +2,10 @@
 
 {% block content %}
         </div>
-        <!--<div class = "row container-fluid">
-<a id="backbutton" class="btn" href="SplashMockUI.html">&#8592 Back</a>
-</div>-->
 		{% if user.is_authenticated %}
         <h1>{{ user.get_username }}</h1>
         <div class = "main">
-            <button>My Posts</button><br />
+            <button href="{% url 'my-posts' %}">My Posts</button><br />
 			{% if user.get_profile %}
             Upvotes: {{ user.get_profile.num_upvotes }}<br />
             Number of posts: {{ user.get_profile.num_posts }}<br />

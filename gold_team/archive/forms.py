@@ -11,7 +11,7 @@ def submitPost(PostForm):
 		form = PostForm()
 		if form.is_valid():
 			form.save()
-			return HTTPResponseRedirect(reverse(''))
+			return HTTPResponseRedirect(reverse('/'))
 		else:
 			messages.error(PostForm, "Error")
 

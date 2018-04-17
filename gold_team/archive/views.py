@@ -27,7 +27,10 @@ def get_post(posting, pk):
         form = PostForm(request.POST)
 
         if form.is_valid():
+<<<<<<< HEAD
 
+=======
+>>>>>>> f67e9cd3825450ca3e47e7e9e07dee9193fce95c
             postInst.post = form.cleaned_data['text']
             postInst.save()
 

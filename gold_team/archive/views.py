@@ -27,7 +27,7 @@ def post(posting, pk):
         posting = post(request.POST)
 
         if form.is_valid():
-            postInst.post = form.cleaned_data['post_date']
+            postInst.post = form.cleaned_data['text']
             postInst.save()
 
             return HTTPResponseRedirect(reverse('/'))

@@ -20,21 +20,22 @@ def feed(request):
         # context={'num_posts':num_posts},
     )
 
-def post(posting, pk):
-    postInst=get_object_or_404(post_inst, pk = pk)
+def get_post(posting, pk):
+    #postInst=get_object_or_404(post_inst, pk = pk)
     
     if request.method == 'POST':
-        posting = post(request.POST)
+        form = PostForm(request.POST)
 
         if form.is_valid():
-            postInst.post = form.cleaned_data['post_date']
-            postInst.save()
+            #postInst.post = form.cleaned_data['post_date']
+            #postInst.save()
 
-            return HTTPResponseRedirect(reverse('post-successful'))
+            return HTTPResponseRedirect(reverse('/archive/'))
 
     return render(
-        posting,
+        request,
         'posting.html',
+        {'form': form}
     )
 
 def login(request):

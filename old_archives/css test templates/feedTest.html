@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Venti</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href='media/logo_splash.png'> <!--TODO: get icon to show-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- adobe fonts-->
+  <link rel="stylesheet" href="https://use.typekit.net/tcp4vdn.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- Add additional CSS in static file -->
+  
+  <link rel="stylesheet" href="styles.css">
+  <!-- sideNav javascript -->
+ <script>
+   $(document).ready(function () {
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+
+});   
+    
+ </script>
+  
+</head>
+
+<body>
+	<div class = "row container-fluid"> 
+		<header class="row" id = "Logo">
+			venti
+			<a href="SplashMockUI.html"><img id = "emblem" src="logo_splash.png"></a>
+		</header>
+        <div class="wrapper">
+        <div id="content">
+          <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+            <i class="glyphicon glyphicon-align-left"></i>
+             Toggle Sidebar
+          </button>
+        
+        <nav id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <h3>Username</h3>
+            </div>
+
+            <!-- Sidebar Links -->
+            <ul class="list-unstyled components">
+                <li class="active"><a href="#">Feed</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">My Posts</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+
+        </div>
+	</div>
+    </div>
+  <div class="container-fluid">
+     <div class ="row"> 
+     <div class = "post col-6">
+		<h2><font color=rgb(255, 10, 200)>234532 4/12/2018</font></h2>
+		<p>this is sample text this is sample text this is sample text this is sample text this is sample text this is sample text this is sample text this is sample text boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii. </p>
+	</div>
+  </div>
+  </div>
+  <div class="col-sm-10 ">
+    <div class="pagination">
+        <span class="page-links">
+          <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>			
+          <span class="page-current"></span>
+          <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>				
+        </span>
+    </div>
+  </div>
+</body>
+</html>

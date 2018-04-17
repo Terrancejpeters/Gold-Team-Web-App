@@ -6,13 +6,13 @@ from django.utils.translation import ugettext_lazy as _
 class PostForm(forms.Form):
 	input_text = forms.CharField(help_text = "Enter a post less than 256 characters",max_length= 256, min_length = 1)
 
-def submitPost(forms.Form):
-	if forms.method == 'POST':
-		form = forms()
+def submitPost(PostForm):
+	if PostForm.method == 'POST':
+		form = PostForm()
 		if form.is_valid():
 			form.save()
 			return HTTPResponseRedirect(reverse(''))
 		else:
-			messages.error(forms, "Error")
+			messages.error(PostForm, "Error")
 
-	return render(forms, 'feed.html', {'form': forms()})
+	return render(PostForm, 'feed.html', {'form': PostForm()})

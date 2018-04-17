@@ -6,6 +6,11 @@ header{
     font-style: normal;
     font-weight: 900;
 }
+body{
+    background-color: rgb(183,81,81);
+    padding-bottom: 20px;
+}
+
 
 #id{
     align-content: flex-end;
@@ -153,4 +158,13 @@ body .main {
     #sidebar.active {
         margin-left: 0;
     }
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(245, 225, 225);
+    color: #000000;
+    text-align: center;
 }

@@ -27,8 +27,8 @@ def get_post(posting, pk):
         form = PostForm(request.POST)
 
         if form.is_valid():
-            #postInst.post = form.cleaned_data['post_date']
-            #postInst.save()
+            post = form.cleaned_data['input_text']
+            post.save()
             return HTTPResponseRedirect(reverse('/archive/'))
 
     return render(

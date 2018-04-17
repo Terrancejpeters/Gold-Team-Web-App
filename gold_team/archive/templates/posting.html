@@ -3,13 +3,13 @@
 {% block content %}
 		<div class="posting">
 			{% if user.is_authenticated %}
-			<form action="/feed/" method="post">
-				<h1{{ topic.text }}</h1>
+			<form action="/archive/" method="post">
+				<h1>{{ topic.text }}</h1>
   				<textarea name="post" maxlength="256" class="post"></textarea><br>
   				<input type="submit" value="submit">
 			</form>
 			{% else %}
-			<p>Login</a></li>
+			<a>Login</a>
 			{% endif %} 
 			</div>
 {% endblock %}

@@ -5,7 +5,6 @@
   {% block title %}<title>Venti</title>{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href='media/logo_splash.png'> <!--TODO: get icon to show-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- adobe fonts-->
@@ -15,6 +14,7 @@
   <!-- Add additional CSS in static file -->
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="shortcut icon" href="{% static 'media/logo_splash.png' %}"> <!--TODO: get icon to show-->
   
 </head>
 
@@ -22,7 +22,7 @@
 	<div class = "row container-fluid"> 
 		<header class="row" id = "Logo">
 			venti
-			<a href="SplashMockUI.html"><img id = "emblem" src="../media/logo_splash.png"></a>
+			<a href="{% url 'feed' %}"><img id = "emblem" src="{% static 'media/logo_splash.png' %}"></a>
 		</header>
 	</div>
     
@@ -31,11 +31,11 @@
       <div class="col-sm-2">
       {% block sidebar %}
       <ul class="sidebar-nav">
-        <li><a href="{% url 'feed' %}">Feed</a></li>
-        <li><a href="{% url 'post' %}">Post</a></li>
+        
 		  
 		{% if user.is_authenticated %}
-		<li>User: {{ user.get_username }}</li>
+		<li>{{ user.get_username }}</li>
+		<li><a href="{% url 'post' %}">Create New Post</a></li>
         <li><a href="{% url 'profile' %}?next={{request.path}}">Profile</a></li>
 		<li><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>   
 		{% else %}

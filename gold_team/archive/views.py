@@ -37,6 +37,12 @@ def about(request):
         'about.html'
     )
 
+def posting(request):
+    return render(
+        request,
+        'posting.html'
+    )
+
 from django.views import generic
 
 class PostListView(generic.ListView):

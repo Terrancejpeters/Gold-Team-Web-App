@@ -1,0 +1,118 @@
+#Logo{
+	text-align: center;
+	font-size: 6vw;
+	color: rgb(245,225,225);
+}
+
+#id{
+    align-content: flex-end;
+}
+#question{
+    font-size: 4vw;
+    text-align: left;
+    color:rgb(183,81,81);
+}
+#chart_div{
+    background-color: rgb(183, 81, 81);
+}
+#votes{
+    font-size: 4.5vw;
+    font-weight: bold;
+}
+
+ol{
+    font-size: 3.5vw;
+}
+
+li{
+    padding-bottom: 5px;
+}
+
+header {
+	text-align: center;
+}
+h1 {
+	text-align: center;
+}
+body header {
+	font-size: 48px;
+	font-weight: bold;
+}
+
+.container-fluid{
+	background-color: rgb(183,81,81);
+    font-family: santino, sans-serif;
+    color: rgb(245,225, 225); 
+     
+}
+
+.navbar{
+	text-align: center;
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.btn {
+    color:rgb(183,81,81);
+    background-color: rgb(245, 225, 225);
+    font-family: arial, sans-serif;
+}
+
+.input_line {
+    width: 20%;
+	height: 38px;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.posting{
+      margin:auto 0;
+      text-align: center;
+}
+
+.post {
+    width: 75%;
+    height: 200px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    margin-top: 20px;
+}
+
+.submit{
+	margin-top: 15px;
+	font-size: 2vw;
+}
+
+.gallery{
+	text-align: center;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 5px solid black;
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+
+    width:90%;
+    text-align: center;
+    
+}
+
+
+body .main {
+	text-align: center;
+}

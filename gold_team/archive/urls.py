@@ -14,6 +14,7 @@ urlpatterns = [
     #path('profile/login/', views.login, name='login'),
     path('profile/', views.profile, name='profile'),
     path('about/', views.about, name='about'),
+    path('newpost/', views.posting, name='posting'),
 ]
 
 urlpatterns += [   

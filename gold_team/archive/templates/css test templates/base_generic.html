@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Venti: Feed</title>
+    {% block title %}<title>Venti </title>{% endblock %}
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+    {% load static %}
     <!-- Custom styles for this template -->
     <link href="feedTemplateStyles.css" rel="stylesheet">
       
@@ -22,56 +22,59 @@
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom box-shadow head">
       <h5 class="my-0 mr-md-auto font-weight-normal">Venti</h5>
+      {% block sidebar %}
       <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Feed</a>
-        <a class="p-2 text-dark" href="#">Poll</a>
-        <a class="p-2 text-dark" href="#">Profile</a>
-        <a class="p-2 text-dark" href="#">Logout</a>
+        <a class="p-2 text-dark" href="{% url 'feed' %}">Feed</a>
+        <a class="p-2 text-dark" href="{% url 'post' %}">Post</a>
+        <a class="p-2 text-dark" href="{% url 'post' %}">Poll</a>
+        {% if user.is_authenticated %}
+        <a class="p-2 text-dark" href="#">User: {{user.get_username}}</a>
+        <a class="p-2 text-dark" href="{% url 'profile' %}?next={{request.path}}">Profile</a>
+        <a class="p-2 text-dark" href="{% url 'logout' %}?next={{request.path}}">Logout</a>
+        {% else %}
+        <a class="p-2 text-dark" href="{% url 'login' %}?next={{request.path}}">Login</a>
+        <a class="btn btn-outline-primary" href="#">Sign up</a>
+        {% endif %}
       </nav>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+        {% endblock %}
     </div>
 
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Feed</h1>
-      <p class="lead">Tell us what's on your mind.</p>
-      <button type="button" class="btn btn-success add" data-toggle="button" aria-pressed="false"><em>+</em></button>
-    </div>
 
     <div class="container">
-      <div class="card-deck mb-3 text-center">
-   
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal id ">ID: 23456</h4>
-            <h4 class="my-0 font-weight-normal date">Date 4/16/2018</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title"><small class="text-muted">#hashtag #gang</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>this is some sample text. i hope this makes the light of day. this is some sample text. i hope this makes the light of day. this is some sample text. i hope this makes the light of day. this is some sample text. i hope this makes the light of day.</li>
-             
-            </ul>
-            <button type="button" class="btn btn-lg btn-success" data-toggle="button" aria-pressed="false">Upvote</button>
-            <button type="button" class="btn btn-lg btn-danger" data-toggle="button" aria-pressed="false">Report</button>
-            <button type="button" class="btn btn-lg btn-warning" data-toggle="button" aria-pressed="false">React!</button>
-          </div>
-        </div>
-       
-      </div>
-        
+     {% block content %}{% endblock %}
+       <div class="col-sm-10 ">
+	  {% block pagination %}
+			{% if is_paginated %}
+				<div class="pagination">
+					<span class="page-links">
+						{% if page_obj.has_previous %}
+							<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+						{% endif %}
+						<span class="page-current">
+							Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+						</span>
+						{% if page_obj.has_next %}
+							<a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+						{% endif %}
+					</span>
+				</div>
+			{% endif %}
+		
+      </div> 
 
       <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
           <div class="col-12 col-md">
             <img class="mb-2" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
             <small class="d-block mb-3 text-muted">&copy; 2017-2018 Gold-Team, CompSci326. UMass Amherst</small>
+            <a href="{% url 'about' %}">About</a>
           </div>
           
           
         </div>
       </footer>
     </div>
-
+{% endblock %}
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

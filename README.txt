@@ -1,17 +1,16 @@
 # Gold-Team-Web-App
 A Web App for Computer Science 326
 
-THe Django files can be found in the gold_team folder
+The Django files can be found in the gold_team folder
 
 TODO:
 High Priority:
  - Make them like home.html or login.html where there is no head or body tags, just the   block content
-- Get Post object text, title, and maybe post_time to show on feed
- - Get user's posts to show on the bottom of their profile page
+ - Get user's posts to show when clicking button
 - Make password reset functional
+-Make Posting functional
 
-=======
->>>>>>> 40d66fdaa927a970fcbd076a164eec9b019221f7
+
 
 Medium Priority:
 - Configure the django site layout to more accurately match the idea we had for it
@@ -23,6 +22,7 @@ Medium Priority:
 -edit coloring
 -edit logo paths for ease of convenience
 -fix container sizes, edit tags for bootstrap compliance
+- Get Post object text, title, and maybe post_time to show on feed
 
 Low Priority:
 - Make unique titles for pages since base_generic.html seems to override

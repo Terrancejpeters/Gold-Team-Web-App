@@ -1,9 +1,12 @@
+{% extends "base_generic.html" %}
 
+{% block content %}
 		</div>
 		<div class="posting">
 			<form action="/action_page.php">
-				<h1>post.topic.text</h1>
+				<h1>{{ topic.text }}</h1>
   				<textarea name="post" maxlength="256" class="post"></textarea><br>
   				<input type="submit" class="submit">
 			</form>
 		</div>
+{% endblock %}

@@ -15,4 +15,4 @@ def submitPost(PostForm):
 		else:
 			messages.error(PostForm, "Error")
 
-	return render(PostForm, 'feed.html', {'form': PostForm()})
+	return render(PostForm, '/', {'form': PostForm()})

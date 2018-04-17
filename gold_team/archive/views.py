@@ -27,8 +27,8 @@ def get_post(posting, pk):
         form = PostForm(request.POST)
 
         if form.is_valid():
-
-
+            post = form.cleaned_data['input_text']
+            post.save()
 
             postInst.post = form.cleaned_data['text']
             postInst.save()

@@ -30,7 +30,7 @@ def post(posting, pk):
             postInst.post = form.cleaned_data['post_date']
             postInst.save()
 
-            return HTTPResponseRedirect(reverse('post-successful'))
+            return HTTPResponseRedirect(reverse('/'))
 
     return render(
         posting,

@@ -29,12 +29,7 @@ def get_post(posting, pk):
         if form.is_valid():
             #postInst.post = form.cleaned_data['post_date']
             #postInst.save()
-
-<<<<<<< HEAD
             return HTTPResponseRedirect(reverse('/archive/'))
-=======
-            return HTTPResponseRedirect(reverse('/'))
->>>>>>> 1d8c1e89951fbb282967fdbeb3efbe1e81a250b0
 
     return render(
         request,

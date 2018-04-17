@@ -35,7 +35,7 @@
 		  
 		{% if user.is_authenticated %}
 		<li>{{ user.get_username }}</li>
-		<li><a href="{% url 'posting' %}">Create New Post</a></li>
+		<li><a href="{% url 'posting' %}?next={{request.path}}">Create New Post</a></li>
         <li><a href="{% url 'profile' %}?next={{request.path}}">Profile</a></li>
 		<li><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>   
 		{% else %}

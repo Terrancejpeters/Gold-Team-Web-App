@@ -125,3 +125,9 @@ LOGIN_REDIRECT_URL = '/'
 
 # Authorize profile model to be called
 AUTH_PROFILE_MODULE = "archive.UserProfile"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = '127.0.0.1'
+
+EMAIL_PORT = 8000

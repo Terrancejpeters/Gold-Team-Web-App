@@ -3,6 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 from .models import Post, User, Feed, Topic
+from .forms import PostForm
 
 def feed(request):
     """
@@ -17,6 +18,23 @@ def feed(request):
         request,
         'feed.html',
         # context={'num_posts':num_posts},
+    )
+
+def post(posting, pk):
+    postInst=get_object_or_404(post_inst, pk = pk)
+    
+    if request.method == 'POST':
+        posting = post(request.POST)
+
+        if form.is_valid():
+            postInst.post = form.cleaned_data['post_date']
+            postInst.save()
+
+            return HTTPResponseRedirect(reverse('post-successful'))
+
+    return render(
+        posting,
+        'posting.html',
     )
 
 def login(request):
@@ -65,4 +83,8 @@ class PostsByUserListView(LoginRequiredMixin,generic.ListView):
     
     def get_queryset(self):
         return Post.objects.filter(poster=self.request.poster).filter(status__exact='o')#.order_by('date_posted')
+
+
+
+
 

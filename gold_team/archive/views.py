@@ -30,8 +30,8 @@ from django.urls import reverse
 from .forms import PostForm
 
 @permission_required('archive.can_make_post')
-def add_post(request, pk):
-    post_inst=get_object_or_404(Post, pk = pk)
+def add_post(request):
+    post_inst=get_object_or_404(Post)
     
     if request.method == 'POST':
         form = PostForm(request.POST)

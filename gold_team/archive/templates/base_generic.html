@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   
-  {% block title %}<title>Venti</title>{% endblock %}
+  {% block title %}Venti{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -35,7 +35,7 @@
 		  
 		{% if user.is_authenticated %}
 		<li>{{ user.get_username }}</li>
-		<li><a href="{% url 'posting' %}?next={{request.path}}">New Post</a></li>
+		<li><a href="{% url 'add_post' %}?next={{request.path}}">New Post</a></li>
         <li><a href="{% url 'profile' %}?next={{request.path}}">Profile</a></li>
 		<li><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>   
 		{% else %}

@@ -9,12 +9,12 @@ urlpatterns = [
     #path('home/<int:pk>', views.PostDetailView.as_view(), name='post-detail'),
     path('', views.feed, name='feed'),
     path('feed/', views.PostListView.as_view(), name='post'),
-    path('feed/<int:pk>', views.PostDetailView.as_view(), name='post-detail'),
+    #path('feed/<uuid:pk>', views.PostDetailView.as_view(), name='post-detail'),
     path('login/', views.login, name='login'),
     #path('profile/login/', views.login, name='login'),
     path('profile/', views.profile, name='profile'),
     path('about/', views.about, name='about'),
-    path('newpost/', views.posting, name='posting'),
+    path('newpost/', views.add_post, name='add_post'),
 ]
 
 urlpatterns += [   

@@ -23,7 +23,7 @@ class Post(models.Model):
     Model representing a post.
     """
     #maybe we have a parent post ID if it is a comment response post? set to be null under certain conditions?
-    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this particular post across entire history")
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this particular post across entire history")
     #post parent or child boolean
     # is_parent = models.BooleanField()
     text = models.TextField(max_length=256)
@@ -53,6 +53,9 @@ class Post(models.Model):
     # funny_count = models.PositiveIntegerField()
     # sad_count = models.PositiveIntegerField()
     # wow_count = models.PositiveIntegerField()    
+	
+    class Meta:
+        permissions = (("can_make_post", "Make a new post"),)
 
     def __str__(self):
         """

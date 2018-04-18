@@ -20,25 +20,27 @@ def feed(request):
         # context={'num_posts':num_posts},
     )
 
-def get_post(posting, pk):
-    #postInst=get_object_or_404(post_inst, pk = pk)
+from django.contrib.auth.decorators import permission_required
+
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+#import datetime
+
+from .forms import PostForm
+
+@permission_required('archive.can_make_post')
+def add_post(request, pk):
+    post_inst=get_object_or_404(Post, pk = pk)
     
     if request.method == 'POST':
         form = PostForm(request.POST)
 
         if form.is_valid():
-            post = form.cleaned_data['input_text']
-            post.save()
+            post_inst.text = form.cleaned_data['input_text']
+            post_inst.save()
 
-            postInst.post = form.cleaned_data['text']
-            postInst.save()
-
-            return HTTPResponseRedirect(reverse('/'))
-
-            #postInst.post = form.cleaned_data['post_date']
-            #postInst.save()
-            return HTTPResponseRedirect(reverse('/archive/'))
-
+            return HTTPResponseRedirect(reverse('archive'))
 
     return render(
         request,
@@ -62,12 +64,6 @@ def about(request):
     return render(
         request,
         'about.html'
-    )
-
-def posting(request):
-    return render(
-        request,
-        'posting.html'
     )
 
 from django.views import generic

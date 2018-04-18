@@ -3,11 +3,11 @@
 {% block content %}
 		<div class="posting">
 			{% if user.is_authenticated %}
-			<form action="/archive/" method="post">
+			<form action="" method="post">
 				{% csrf_token %}
-				<label for="input_text">Berk, Hamp, Frank, or Worcester?</label>
+				<h1>Berk, Hamp, Frank, or Worcester?</h1>
   				<input id="input_text" type="text" name="input_text"></label>
-  				<input type="submit" value="submit">
+  				<input type="submit" value="Submit">
 			</form>
 			{% else %}
 			<a>Login</a>

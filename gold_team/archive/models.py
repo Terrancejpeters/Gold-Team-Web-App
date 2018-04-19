@@ -27,7 +27,7 @@ class Post(models.Model):
     #post parent or child boolean
     # is_parent = models.BooleanField()
     text = models.TextField(max_length=256)
-    poster = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
     # post_date = models.DateTimeField(null = True, blank = True)
     feed = models.ForeignKey('Feed', on_delete=models.SET_NULL, null=True)

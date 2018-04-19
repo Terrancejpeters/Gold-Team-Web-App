@@ -31,21 +31,23 @@ from .forms import PostForm
 
 @permission_required('archive.can_make_post')
 def add_post(request):
-    post_inst=get_object_or_404(Post)
+    new_post=Post()
     
     if request.method == 'POST':
         form = PostForm(request.POST)
 
         if form.is_valid():
-            post_inst.text = form.cleaned_data['input_text']
-            post_inst.save()
+            new_post.text = form.cleaned_data['input_text']
+            new_post.upvote_count = 0
+            #new_post.author = current author
+            new_post.save()
 
-            return HTTPResponseRedirect(reverse('archive'))
+            return HttpResponseRedirect(reverse('feed'))
 
     return render(
         request,
-        'posting.html',
-        {'form': form}
+        'posting.html'#,
+        #{'form': form}
     )
 
 def login(request):
@@ -87,7 +89,7 @@ class PostsByUserListView(LoginRequiredMixin,generic.ListView):
     paginate_by = 10
     
     def get_queryset(self):
-        return Post.objects.filter(poster=self.request.poster).filter(status__exact='o')#.order_by('date_posted')
+        return Post.objects.filter(author=self.request.author).filter(status__exact='o')#.order_by('date_posted')
 
 
 

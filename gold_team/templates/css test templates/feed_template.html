@@ -9,24 +9,29 @@
 </div>	
 
 <div class="container">
+    {% if post_list %}
+    
+    
     <div class="card-deck mb-3 text-center">
-
             <div class="card mb-4 box-shadow">
               <div class="card-header">
-                <h4 class="my-0 font-weight-normal id ">ID: 23456</h4>
-                <h4 class="my-0 font-weight-normal date">Date 4/16/2018</h4>
+                <h4 class="my-0 font-weight-normal id ">{{id}}</h4>
+                <h4 class="my-0 font-weight-normal date">{{post_date}}</h4>
               </div>
               <div class="card-body">
-                <h1 class="card-title pricing-card-title"><small class="text-muted">#hashtag #gang</small></h1>
+                <h1 class="card-title pricing-card-title"><small class="text-muted">{{post.topic.text}}</small></h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>this is some sample text. i hope this makes the light of day. this is some sample text. i hope this makes the light of day. this is some sample text. i hope this makes the light of day. this is some sample text. i hope this makes the light of day.</li>
-
+                  <li>{{post.text}}</li>
                 </ul>
                 <button type="button" class="btn btn-lg btn-success" data-toggle="button" aria-pressed="false">Upvote</button>
                 <button type="button" class="btn btn-lg btn-danger" data-toggle="button" aria-pressed="false">Report</button>
                 <button type="button" class="btn btn-lg btn-warning" data-toggle="button" aria-pressed="false">React!</button>
               </div>
             </div>
-
-          </div>
+    </div>
+    {% else %}
+    
+    <p>there are no posts yet.</p>
+    {{% endif %}}
 </div>
+{% endblock %}

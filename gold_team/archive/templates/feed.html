@@ -8,21 +8,12 @@
 
       {% for post in post_list %}
       <li>
-        <p>{{ post.text }}</p> ({{ post.topic.text }})
+        <p>{{ post.text }}</p> {{ post.topic.text }}
       </li>
-      {% endfor %}
+    {% endfor %}
 
     </ul>
     {% else %}
       <p>There are no posts yet.</p>
-<<<<<<< HEAD
-    {% endif %} 
-	<div class = "post">
-		<h2><font color=rgb(255, 10, 200)>{{id}} {{post_date}}</font></h2>
-		<p>{{text}}</p>
-	</div>
-
-=======
     {% endif %}
->>>>>>> origin/master
 {% endblock %}

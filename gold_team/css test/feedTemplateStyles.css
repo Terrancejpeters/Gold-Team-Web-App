@@ -69,11 +69,13 @@ h5{
    color:rgb(245,225,225); 
 }
 
-.btn-lg{
+button{
   display: inline-block;
   margin-right: 1.5rem;
   -webkit-box-shadow: 0 0 15px #000;
-    box-shadow: 0 0 12px #000;
+  box-shadow: 0 0 12px #000;
+  
+  border-radius: 2rem;
 }
 
 .add{
@@ -107,6 +109,5 @@ h5{
 .text-muted{
     color: #000;
 }
-
 
 

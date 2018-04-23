@@ -90,8 +90,13 @@ class PostsByUserListView(LoginRequiredMixin,generic.ListView):
     
     def get_queryset(self):
         return Post.objects.filter(author=self.request.author).filter(status__exact='o')#.order_by('date_posted')
+    
+from django.core.mail import send_mail
 
-
-
-
-
+send_mail(
+    'Password Reset',
+    'Follow the link for a password reset.',
+    'ventigrande79@gmail.com',
+    ['thubbard@umass.edu'],
+    fail_silently=False,
+)

@@ -125,3 +125,11 @@ LOGIN_REDIRECT_URL = '/'
 
 # Authorize profile model to be called
 AUTH_PROFILE_MODULE = "archive.UserProfile"
+
+#Settings applied for password reset emails
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ventigrande79@gmail.com' 
+EMAIL_HOST_PASSWORD = 'compsci326'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

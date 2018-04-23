@@ -110,4 +110,21 @@ button{
     color: #000;
 }
 
+.btn-group-vertical{
+    min-width: 5rem;
+    padding-right: 5rem;
+}
+
+.list-group-item{
+    min-width: 5rem;
+    padding-right: 5rem;
+    
+}
+h6{
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+
+
 

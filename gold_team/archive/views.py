@@ -68,6 +68,18 @@ def about(request):
         'about.html'
     )
 
+def poll_vote(request):
+    return render(
+        request,
+        'poll.html'
+    )
+
+def poll_results(request):
+    return render(
+        request,
+        'poll_results.html'
+    )
+
 from django.views import generic
 
 class PostListView(generic.ListView):

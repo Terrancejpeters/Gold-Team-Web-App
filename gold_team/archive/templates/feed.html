@@ -7,9 +7,23 @@
     <ul>
 
       {% for post in post_list %}
-      <li>
-        <p>{{ post.text }}</p> {{ post.topic.text }}
-      </li>
+      <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal id ">{{id}}</h4>
+                <h4 class="my-0 font-weight-normal date">{{post_date}}</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><small class="text-muted">{{post.topic.text}}</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>{{post.text}}</li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-success" data-toggle="button" aria-pressed="false">Upvote</button>
+                <button type="button" class="btn btn-lg btn-danger" data-toggle="button" aria-pressed="false">Report</button>
+                <button type="button" class="btn btn-lg btn-warning" data-toggle="button" aria-pressed="false">React!</button>
+              </div>
+            </div>
+    </div>
     {% endfor %}
 
     </ul>

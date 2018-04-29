@@ -1,170 +1,112 @@
-header{
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+/*
+*
+*
+*
+*/
+.id{
+  text-align: left;
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.date{
+  text-align: right;
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+body{
+    background-color: rgb(183,81,81);
+}
+
+h5{
 	text-align: center;
 	font-size: 6vw;
-	color: rgb(39, 5, 6); 
+	color: rgb(245,225,225);
     font-family: blenny, sans-serif;
     font-style: normal;
     font-weight: 900;
-}
-body{
-    background-color: rgb(183,81,81);
-    padding-bottom: 20px;
+    text-shadow: 0 0 10px #000;
+    display: inline-block;
 }
 
-
-#id{
-    align-content: flex-end;
-}
-#question{
-    font-size: 4vw;
-    text-align: left;
-    color:rgb(183,81,81);
-}
-#chart_div{
-    background-color: rgb(183, 81, 81);
-}
-#votes{
-    font-size: 4.5vw;
-    font-weight: bold;
+.head{
+  background-color: rgb(183,81,81);
 }
 
-ol{
-    font-size: 3.5vw;
+.display-4{
+    color:rgb(245,225,225);
+    font-family: blenny, sans-serif;
+    text-shadow: 0 0 10px #000;
 }
 
-li{
-    list-style-type:none;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    margin-bottom: 5px;
-    box-sizing: border-box;
-    border: 1px solid #000000;
-    background-color: #ffffff;
+#lead{
+   color:rgb(245,225,225); 
 }
 
-header {
-	text-align: center;
-}
-h1 {
-	text-align: center;
-}
-body header {
-	font-size: 48px;
-	font-weight: bold;
+.btn-lg{
+  display: inline-block;
+  margin-right: 1.5rem;
+  -webkit-box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 12px #000;
 }
 
-.container-fluid{
-	background-color: rgb(183,81,81);
-    font-family: santino, sans-serif;
-    color: rgb(0, 0, 0); 
-     
+.add{
+  display: inline-block;
+  -webkit-box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 12px #000;
 }
 
-.navbar{
-	text-align: center;
-}
-
-.sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
-    font-size: 3rem;
-}
-
-.btn {
-    color:rgb(183,81,81);
-    background-color: rgb(245, 225, 225);
-    font-family: arial, sans-serif;
-}
-
-.input_line {
-    width: 20%;
-	height: 38px;
-    padding: 6px 10px;
-    box-sizing: border-box;
-    border: 3px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-}
-
-.posting{
-      margin:auto 0;
-      text-align: center;
-}
-
-.post {
-    height: 200px;
-    padding: 12px 12px;
-    box-sizing: border-box;
-    border: 3px solid #ccc;
-    border-radius: 4px;
-    background-color: rgb(245, 225, 225);
-    box-shadow: 3px 3px 5px 6px #ccc;
-    resize: none;
-    margin-top: 20px;
-}
-
-.submit{
-	margin-top: 15px;
-	font-size: 2vw;
-}
-
-.gallery{
-	text-align: center;
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
-    border: 5px solid black;
-    border-radius: 15px;
-    top: 0;
-    left: 0;
-    width:90%;
-    text-align: center;
+.card, .card-body{
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
     
 }
-
-
-body .main {
-	text-align: center;
-    background-color: rgb(183,81,81); 
+.card{
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    -webkit-box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 15px #000;
+}
+.card-body{
+    background-color: rgb(245,225,225);
+    box-shadow: inset 0 0 8px #000000;
 }
 
-.wrapper {
-    display: flex;
-    align-items: stretch;
-}     
-
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 100vh;
+.media-object{
+    display: inline-block;
+    max-height: 1rem;
+    max-width: 1rem;
 }
 
-#sidebar.active {
-    margin-left: -250px;
+.text-muted{
+    color: #000;
 }
 
-.col-6{
-    background-color: rgb(183,81,81);
-}
 
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-}
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(245, 225, 225);
-    color: #000000;
-    text-align: center;
-}
+

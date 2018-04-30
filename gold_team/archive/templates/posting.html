@@ -5,12 +5,16 @@
 			{% if user.is_authenticated %}
 			<form action="" method="post">
 				{% csrf_token %}
+<<<<<<< Updated upstream
 				<h1>Berk, Hamp, Frank, or Worcester?</h1>
+=======
+				<h1>{{ post.topic.text }}</h1>
+>>>>>>> Stashed changes
   				<input id="input_text" type="text" name="input_text"></label>
   				<input type="submit" value="Submit">
 			</form>
 			{% else %}
-			<a>Login</a>
+			<li>You need to login!</li>
 			{% endif %} 
 		</div>
 {% endblock %}

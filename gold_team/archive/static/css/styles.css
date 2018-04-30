@@ -44,7 +44,7 @@ body{
     background-color: rgb(183,81,81);
 }
 
-h5{
+h5 a, h5 a:hover, h5 a:visited{
 	text-align: center;
 	font-size: 6vw;
 	color: rgb(245,225,225);
@@ -53,6 +53,9 @@ h5{
     font-weight: 900;
     text-shadow: 0 0 10px #000;
     display: inline-block;
+
+  
+
 }
 
 .head{
@@ -108,5 +111,11 @@ h5{
     color: #000;
 }
 
+li{
+  background-color: white;
+  margin-bottom: 5px;
+  list-style-type: none;
+
+}
 
 

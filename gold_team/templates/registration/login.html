@@ -1,56 +1,46 @@
-{% extends "base_generic.html" %}
 
-{% block content %}
+      {% extends "base_generic.html" %}
+      {% block content %}
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
-
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
+      {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
-{% endif %}
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
 
-<div>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
-</div>
-<div>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</div>
-
-<div>
-  <input type="submit" value="login" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</div>
-</form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-
-{% endblock %}		
- <!--       <div class = "row container-fluid"> 
-			<header class="row" id = "Logo">
-                venti
-                <a href="SplashMockUI.html"><img id = "emblem" src="media/logo_splash.png"></a>
-			</header>
-		</div>
-        <div class = "row container-fluid">
-			<a id="backbutton" class="btn" href="SplashMockUI.html">&#8592 Back</a>
-        </div>
-		<div class = "main">
-			<header id = "login"><strong>Log In</strong></header>
-			<p>Username: {{ username }} <textarea name="input_line" maxlength="256" class="input_line" rows=1></textarea><br />
-			Password: {{ password }} <textarea name="input_line" maxlength="256" class="input_line" rows=1></textarea><br />
-			<button>Log In</button><br />
-			<a href="">Recover password</a><br />
-			<a href="">Create new account</a></p>
-		</div>-->
+     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Log in</h1>
+         <p class="lead">Log in and tell us what's on your mind!</p>
+     </div>
+    <div class="container pl-5 pr-5 ">
+        
+      {% csrf_token %}
+      
+      <form class="form-signin">
+      <label form="username" class="sr-only">{{ form.username.label_tag }}</label>
+      <input type="username" id="inputEmail" class="form-control " placeholder="username" required="{{ form.username }}" autofocus="">
+      
+      <label for="inputPassword" class="sr-only">{{ form.password.label_tag }}</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="{{ form.password }}">
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary" type="submit">Log in</button>
+      <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    </form>
+     <p>
+     <a href="{% url 'password_reset' %}">Lost Password?</a><br />
+			
+     <a href="">Create new account</a>
+      </p>
+    </div>
+{% endblock %}

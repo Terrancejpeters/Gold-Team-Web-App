@@ -42,9 +42,9 @@
 		 <a class="p-2 text-dark" href="{% url 'profile' %}?next={{request.path}}">{{user.get_username}}</a>
 		<a class="p-2 text-dark" href="{% url 'add_post' %}?next={{request.path}}">New Post</a>
    
-		<a class="p-2 text-dark" href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>   
+		<a class="p-2 text-dark" href="{% url 'logout' %}?next={{request.path}}">Logout</a>   
 		{% else %}
-		<a class="p-2 text-dark" href="{% url 'login' %}?next={{request.path}}">Login</a></li>   
+		<a class="p-2 text-dark" href="{% url 'login' %}?next={{request.path}}">Login</a>   
 		<a class="btn btn-outline-primary" href="#">Sign up</a>
 		{% endif %} 
       </nav>

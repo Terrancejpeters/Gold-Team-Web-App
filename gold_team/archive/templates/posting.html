@@ -5,13 +5,8 @@
 			{% if user.is_authenticated %}
 			<form action="" method="post">
 				{% csrf_token %}
-				
-				<h1>Berk, Hamp, Frank, or Worcester?</h1>
-				<!--<h1>{% Topic.objects.latest("active_date") %}</h1>-->
-  				<input id="input_text" type="text" name="input_text" height=""></label>
 
 				<h1>Berk, Hamp, Frank, or Worcester?</h1>
-				<h1>{{ post.topic.text }}</h1>
   				<input id="input_text" type="text" name="input_text"></label>
   				<input type="submit" value="Submit">
 			</form>
